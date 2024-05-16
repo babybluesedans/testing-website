@@ -1,0 +1,18 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body input{
+    padding: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: rgb(201, 201, 201);
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    font-size: larger;
+    border: 0;
+    outline: 0;
+}
