@@ -1,4 +1,5 @@
 let opacity;
+let username;
 
 function raiseOpacity(element) {
     opacity += 10;
@@ -19,20 +20,44 @@ function fadeInNewElement(element) {
         setTimeout((input) => {
             opacity += 5;
             element.style.opacity = `${opacity}%`;
-            console.log(opacity);
         }, `${interval}`);
-    }
+     }}
+
+
+function fadeOutElement(element) {
+    element.style.opacity = "100%";
+    opacity = 100;
+    let interval = 0;
+    for (let i=0; i < 20; i++) {
+        interval += 50;
+        setTimeout((input) => {
+            opacity -=5;
+            element.style.opacity = `${opacity}%`;
+        }, `${interval}`);
     
-}
+    }}
 
 addEventListener("DOMContentLoaded", (event) => {
-    console.log('test');
     let input = document.createElement('input');
     input.setAttribute("id", "name-field");
     input.setAttribute("placeholder", "What is your name?");
     input.setAttribute("autofocus", "true");
     input.setAttribute("outline", "none");
     fadeInNewElement(input);
+})
+
+addEventListener("keydown", (event) => {
+    if (event.defaultPrevented) {
+        return;
+    }
+
+    if (event.code === "Enter") {
+            username = document.getElementById("name-field").value;
+            let element = document.getElementById("name-field");
+            fadeOutElement(element);
+        }
+        
+    
 })
 
 
