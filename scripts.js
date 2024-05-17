@@ -39,8 +39,36 @@ function fadeOutElement(element, speed) {
     
     }}
 
-function slideElement(element, distance) {
-    
+    function slideElement(id, distance, speed, direction) {
+        let interval = speed * 1;
+        let iterator = speed * 1;
+        let element = document.getElementById(id);
+        console.log(element)
+        element.style.marginRight = "1px";
+        console.log(element.style.marginTop)
+
+        switch (direction) {
+        case 1:
+            console.log(element.style.marginBottom)
+            for (let i=0; i < distance; i++) {
+                    setTimeout(() => {
+                        element.style.marginRight = `${parseInt(element.style.marginRight) + 1}px`;
+                    }, `${interval += iterator}`)
+        
+                }
+            break;
+        case 2:
+            direction = "marginLeft";
+            break;
+        case 3:
+            direction = "marginTop";
+            break;
+        case 4:
+            direction =  "marginRight";
+            break;
+        }
+
+
 }
 
 addEventListener("DOMContentLoaded", (event) => {
@@ -72,6 +100,7 @@ addEventListener("keydown", function eventHandler(event) {
 
         let greeting = document.createElement('span')
         greeting.innerHTML = "Hello ";
+        greeting.id = "greeting";
         this.setTimeout(() => {
             fadeInNewElement(greeting, 1);
             this.setTimeout(() => {
@@ -80,7 +109,8 @@ addEventListener("keydown", function eventHandler(event) {
                 usernameElement.style.fontStyle = "italic";
                 usernameElement.style.fontWeight = '100';
                 console.log("me! me!")
-                fadeInNewElement(usernameElement, 1);
+                this.setTimeout(slideElement(greeting.id, 161, 3, 1), `${duration * 2}`);
+                fadeInNewElement(usernameElement, 2);
             }, `${duration}`) 
         }, `${duration}`);
         }

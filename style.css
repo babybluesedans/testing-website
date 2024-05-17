@@ -3,7 +3,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 6px;
+    gap: 0px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -20,5 +20,6 @@ body input{
 }
 
 body span {
-    font-size: x-large;
+    font-size: 48px;
+
 }
